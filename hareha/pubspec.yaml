@@ -1,0 +1,40 @@
+name: mali_daftari_website
+description: Official website for Mali Daftari - Business Management Platform
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Routing
+  go_router: ^14.6.2
+  
+  # State Management
+  flutter_riverpod: ^2.6.1
+  
+  # Fonts & Icons
+  google_fonts: ^6.2.1
+  
+  # Animations
+  visibility_detector: ^0.4.0+2
+  
+  # Utils
+  url_launcher: ^6.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - lib/resources/images/
+    - lib/resources/images/image-removebg-preview(1).png
+    - lib/resources/images/heroimage.png
