@@ -63,27 +63,22 @@ class _HeroSection extends StatelessWidget {
           child: AnimatedFadeIn(
             child: Column(
               children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSizes.md,
-                    vertical: AppSizes.xs,
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.white.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(AppSizes.radiusFull),
-                    border: Border.all(
-                      color: AppColors.white.withOpacity(0.3),
-                    ),
-                  ),
-                  child: Text(
-                    language == 'sw' 
-                        ? 'Uchambuzi wa Data kwa Biashara Zilizoimarishwa' 
-                        : 'Data Analytics for Established Businesses',
-                    style: AppTextStyles.bodySmall(context).copyWith(
-                      color: AppColors.white,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
+                // Mali Akili Logo
+                Image.asset(
+                  'lib/resources/images/mali_akili_logo.png',
+                  height: responsive.isMobile ? 60 : 80,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(
+                      height: responsive.isMobile ? 60 : 80,
+                      padding: const EdgeInsets.all(AppSizes.md),
+                      child: Text(
+                        'MALI AKILI',
+                        style: AppTextStyles.h2(context).copyWith(
+                          color: AppColors.white,
+                        ),
+                      ),
+                    );
+                  },
                 ),
                 const SizedBox(height: AppSizes.xl),
                 Text(
