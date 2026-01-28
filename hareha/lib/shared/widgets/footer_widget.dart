@@ -184,10 +184,10 @@ class FooterWidget extends ConsumerWidget {
         const SizedBox(height: AppSizes.md),
         _FooterLink(
           label: 'Mali Daftari',
-          onTap: () => showComingSoon(context, language, 'Mali Daftari'),
+          onTap: () => context.go('/mali-daftari'),
         ),
         _FooterLink(
-          label: language == 'sw' ? 'Ushauri wa Biashara' : 'Business Consultation',
+          label: 'Mali Akili',
           onTap: () => context.go('/mali-akili'),
         ),
         _FooterLink(
@@ -277,15 +277,15 @@ class FooterWidget extends ConsumerWidget {
         ),
         const SizedBox(height: AppSizes.xs),
         _SocialButton(
-          label: 'LinkedIn',
-          icon: Icons.business,
-          onTap: () => showComingSoon(context, language, 'LinkedIn'),
+          label: 'TikTok',
+          icon: Icons.tiktok,
+          onTap: () => showComingSoon(context, language, 'tiktok'),
         ),
         const SizedBox(height: AppSizes.xs),
         _SocialButton(
-          label: 'Facebook',
-          icon: Icons.facebook,
-          onTap: () => showComingSoon(context, language, 'Facebook'),
+          label: 'Instagram',
+          icon: Icons.photo_camera_front_rounded,
+          onTap: () => showComingSoon(context, language, 'Instagram'),
         ),
       ],
     );

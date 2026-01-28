@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_text_styles.dart';
 import '../../../../core/constant/app_sizes.dart';
@@ -56,7 +57,8 @@ class FeaturesSection extends ConsumerWidget {
                     const SizedBox(height: AppSizes.xl),
                     ElevatedButton(
                       onPressed: () {
-                        // TODO: Link to Mali Daftari website
+                        Navigator.pop(context);
+                        context.go('/mali-daftari');
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.cyan,

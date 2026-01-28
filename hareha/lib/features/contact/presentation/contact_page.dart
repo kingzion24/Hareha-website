@@ -307,8 +307,8 @@ class _FAQSection extends StatelessWidget {
             ? 'Ni nani anaweza kutumia Mali Daftari?'
             : 'Who can use Mali Daftari?',
         answer: language == 'sw'
-            ? 'Mali Daftari imeundwa kwa biashara ndogo na za kati (SMEs) Tanzania. Ikiwa una duka, kampuni ndogo, au biashara inayohitaji kusimamia mali, mauzo, wateja, na wafanyakazi, Mali Daftari ni suluhisho sahihi kwako.'
-            : 'Mali Daftari is designed for Tanzanian small and medium enterprises (SMEs). If you run a shop, small company, or business that needs to manage inventory, sales, customers, and employees, Mali Daftari is the right solution for you.',
+            ? 'Mali Daftari imeundwa kwa biashara ndogo na za kati (SMEs) Tanzania. Ikiwa una duka au biashara inayohitaji kusimamia mali, mauzo na wafanyakazi, Mali Daftari ni suluhisho sahihi kwako.'
+            : 'Mali Daftari is designed for Tanzanian small and medium enterprises (SMEs). If you run a shop or business that needs to manage inventory, sales and employees, Mali Daftari is the right solution for you.',
       ),
       _FAQData(
         question: language == 'sw'
@@ -331,8 +331,8 @@ class _FAQSection extends StatelessWidget {
             ? 'Ninaweza kuwasiliana vipi kwa msaada?'
             : 'How can I contact you for support?',
         answer: language == 'sw'
-            ? 'Unaweza kuwasiliana nasi kupitia barua pepe (hello@hareha.co.tz), simu (+255 700 000 000), au kutembelea ofisi zetu Dar es Salaam. Tunatoa msaada wa 24/7 kwa wateja wetu.'
-            : 'You can contact us via email (hello@hareha.co.tz), phone (+255 700 000 000), or visit our office in Dar es Salaam. We provide 24/7 support for our customers.',
+            ? 'Unaweza kuwasiliana nasi kupitia barua pepe (hareha.communications@gmail.com), simu (+255-688-996-287), au kutembelea ofisi zetu Dar es Salaam. Tunatoa msaada wa 24/7 kwa wateja wetu.'
+            : 'You can contact us via email (hareha.communications@gmail.com), phone (+255-688-996-287), or visit our office in Dar es Salaam. We provide 24/7 support for our customers.',
       ),
     ];
 

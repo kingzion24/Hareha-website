@@ -451,10 +451,6 @@ class AppStrings {
       'en': 'Your email address',
       'sw': 'Anwani yako ya barua pepe',
     },
-    'copyright': {
-      'en': '© 2020 Lumify UI Kit. All rights reserved',
-      'sw': '© 2020 Lumify UI Kit. Haki zote zimehifadhiwa',
-    },
     // Add to home section
 'learnMore': {
   'en': 'Learn More',

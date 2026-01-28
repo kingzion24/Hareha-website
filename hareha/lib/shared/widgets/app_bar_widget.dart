@@ -95,6 +95,12 @@ class AppBarWidget extends ConsumerWidget implements PreferredSizeWidget {
                 ),
                 const SizedBox(width: AppSizes.xl),
                 _NavLink(
+                  label: 'Mali Daftari',
+                  isActive: currentRoute == '/mali-daftari',
+                  onTap: () => context.go('/mali-daftari'),
+                ),
+                const SizedBox(width: AppSizes.xl),
+                _NavLink(
                   label: 'Mali Akili',
                   isActive: currentRoute == '/mali-akili',
                   onTap: () => context.go('/mali-akili'),
@@ -189,6 +195,14 @@ class AppBarWidget extends ConsumerWidget implements PreferredSizeWidget {
               onTap: () {
                 Navigator.pop(context);
                 context.go('/about');
+              },
+            ),
+            _MobileNavLink(
+              label: 'Mali Daftari',
+              isActive: currentRoute == '/mali-daftari',
+              onTap: () {
+                Navigator.pop(context);
+                context.go('/mali-daftari');
               },
             ),
             _MobileNavLink(

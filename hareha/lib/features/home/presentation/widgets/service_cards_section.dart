@@ -18,39 +18,43 @@ class ServiceCardsSection extends ConsumerWidget {
 
     return Container(
       width: double.infinity,
-      color: AppColors.cardLight, // Subtle background to differentiate from previous section
+      color: AppColors.white,
       child: Center(
         child: Container(
           constraints: BoxConstraints(maxWidth: responsive.maxContainerWidth),
           padding: EdgeInsets.symmetric(
             horizontal: responsive.horizontalPadding,
-            vertical: responsive.isMobile ? AppSizes.xl3 : AppSizes.xl5,
+            vertical: responsive.isMobile ? AppSizes.xl4 : AppSizes.xl5,
           ),
           child: Column(
             children: [
-              // Section Header
+              // Section Header with staggered animation
               AnimatedFadeIn(
+                duration: const Duration(milliseconds: 800),
                 child: Column(
                   children: [
                     Text(
                       language == 'sw'
-                          ? 'Ni Changamoto Gani ya Biashara Inayofanana na Yako?'
-                          : 'Which Business Challenge\nSounds Like Yours?',
+                          ? 'Je, Hii ni Biashara Yako?'
+                          : 'Does This Sound Like\nYour Business?',
                       style: AppTextStyles.displayMedium(context).copyWith(
-                        fontSize: responsive.isMobile ? 32 : 48,
+                        fontSize: responsive.isMobile ? 38 : 58,
                         color: AppColors.darkNavy,
-                        height: 1.2,
+                        height: 1.15,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: -0.5,
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: AppSizes.md),
+                    const SizedBox(height: AppSizes.lg),
                     Text(
                       language == 'sw'
-                          ? 'Tumebuni suluhisho sambamba kwa sababu tunajua biashara tofauti zinakabiliwa na changamoto tofauti kabisa.'
-                          : 'We\'ve built parallel solutions because different businesses\nface fundamentally different challenges.',
-                      style: AppTextStyles.bodyMedium(context).copyWith(
+                          ? 'Changamoto tofauti zinahitaji suluhisho tofauti. Tambua mahali ulipo.'
+                          : 'Different challenges require different solutions. Identify where you are.',
+                      style: AppTextStyles.bodyLarge(context).copyWith(
                         color: AppColors.textGray,
-                        fontSize: responsive.isMobile ? 14 : 16,
+                        fontSize: responsive.isMobile ? 16 : 18,
+                        height: 1.6,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -58,78 +62,138 @@ class ServiceCardsSection extends ConsumerWidget {
                 ),
               ),
               
-              SizedBox(height: responsive.isMobile ? AppSizes.xl2 : AppSizes.xl3),
+              SizedBox(height: responsive.isMobile ? AppSizes.xl3 : AppSizes.xl4),
               
-              // Problem Scenario Cards
+              // Problem Scenario Cards with staggered entrance
               responsive.isMobile
                   ? Column(
                       children: [
-                        _ProblemScenarioCard(
-                          icon: Icons.inventory_2_outlined,
-                          iconColor: const Color.fromARGB(255, 148, 238, 201),
-                          headline: language == 'sw'
-                              ? 'Unasimamia Kila Kitu Kichwani Mwako'
-                              : 'You\'re Managing Everything\nin Your Head',
-                          problems: language == 'sw'
-                              ? [
-                                  'Huwezi kukumbuka kwa usahihi uliuza nini Jumanne iliyopita, kwa hivyo huna uhakika wa kitu gani cha kurejesha',
-                                  'Hesabu yako inaishi katika kumbukumbu yako, na unaogopa wakati huwezi kukumbuka kama uliagiza zaidi ya kitu fulani',
-                                  'Unaandika gharama katika vitabu tofauti, kwenye karatasi, kwenye simu yako—na kurekebisha ni kaburi',
-                                  'Unaamini wafanyakazi wako lakini huna njia ya kufuatilia kilichotokea wakati hukuwepo',
-                                  'Unataka kukua, labda kuongeza eneo la pili, lakini huna nambari za kuaminika za kujenga maamuzi'
-                                ]
-                              : [
-                                  'You can\'t remember exactly what you sold last Tuesday, so you\'re not sure what to restock',
-                                  'Your inventory lives in your memory, and you panic when you can\'t recall if you ordered more of something',
-                                  'You write expenses in different notebooks, on papers, on your phone—and reconciling is a nightmare',
-                                  'You trust your employees but have no way to track what actually happened when you weren\'t there',
-                                  'You want to grow, maybe add a second location, but you don\'t have reliable numbers to base decisions on'
-                                ],
-                          insight: language == 'sw'
-                              ? 'Tatizo si kwamba wewe ni mdanganyifu. Ni kwamba unaendesha biashara bila miundombinu ya kimsingi ya kunakili kinachoendelea kila siku.'
-                              : 'The problem isn\'t that you\'re disorganized. It\'s that you\'re running a business without the basic infrastructure to capture what\'s happening daily.',
-                          solution: language == 'sw'
-                              ? 'Mali Daftari inakupa miundombinu hiyo. Imeundwa kwa biashara kama yako—ambapo mmiliki anafanya kila kitu na anahitaji mfumo unaonakili mauzo, hesabu, gharama, na shughuli za wafanyakazi kwa wakati halisi, bila kuongeza ugumu.'
-                              : 'Mali Daftari gives you that infrastructure. It\'s built for businesses like yours—where the owner is doing everything and needs a system that captures sales, inventory, expenses, and staff activity in real-time, without adding complexity.',
-                          ctaText: language == 'sw' ? 'Angalia Jinsi Mali Daftari Inavyofanya Kazi' : 'See How Mali Daftari Works',
-                          ctaColor: AppColors.accentOrange,
-                          onTap: () {
-                            // TODO: Navigate to Mali Daftari page
-                          },
+                        AnimatedFadeIn(
+                          delay: const Duration(milliseconds: 200),
+                          duration: const Duration(milliseconds: 700),
+                          slideDistance: 30,
+                          child: _SelfDiagnosisCard(
+                            iconColor: AppColors.accentOrange,
+                            gradientColors: [
+                              const Color(0xFFFFFAF5),
+                              const Color(0xFFFFF5EB),
+                            ],
+                            headline: language == 'sw'
+                                ? 'Simamia kwa Uhakika'
+                                : 'Manage with Certainty',
+                            painPoints: language == 'sw'
+                                ? [
+                                    _PainPoint(
+                                      category: 'Kumbukumbu:',
+                                      description: 'Kichwa kimejaa. Hukumbuki nani anadaiwa au nini kiliuzwa juzi.',
+                                    ),
+                                    _PainPoint(
+                                      category: 'Usimamizi:',
+                                      description: 'Ushirikina wa Hesabu. Daftari kupotea au kuharibika ni hofu ya kila siku.',
+                                    ),
+                                    _PainPoint(
+                                      category: 'Uaminifu:',
+                                      description: 'Wizi wa Siri. Huwezi kujua kilichotokea dukani ukiwa haupo.',
+                                    ),
+                                    _PainPoint(
+                                      category: 'Ukuaji:',
+                                      description: 'Giza la Maamuzi. Unataka kupanuka, lakini huna namba za uhakika.',
+                                    ),
+                                  ]
+                                : [
+                                    _PainPoint(
+                                      category: 'Memory:',
+                                      description: 'Head is full. Can\'t remember who owes what or what sold yesterday.',
+                                    ),
+                                    _PainPoint(
+                                      category: 'Management:',
+                                      description: 'Inventory Chaos. Fear of losing or damaging notebooks is daily.',
+                                    ),
+                                    _PainPoint(
+                                      category: 'Trust:',
+                                      description: 'Silent Theft. Can\'t know what happened at the shop when you\'re away.',
+                                    ),
+                                    _PainPoint(
+                                      category: 'Growth:',
+                                      description: 'Decision Darkness. Want to expand but have no reliable numbers.',
+                                    ),
+                                  ],
+                            insight: language == 'sw'
+                                ? 'Tatizo sio wewe—ni ukosefu wa miundombinu ya kimsingi ya kunasa data.'
+                                : 'The problem isn\'t you—it\'s the lack of basic data capture infrastructure.',
+                            solution: language == 'sw'
+                                ? 'Mali Daftari ni mfumo mzima wa usimamizi: mauzo, hesabu, gharama, wafanyakazi—kila kitu kwa wakati halisi, kutoka simu yako.'
+                                : 'Mali Daftari is a complete management system: sales, inventory, expenses, staff—everything in real-time, from your phone.',
+                            ctaText: language == 'sw' ? 'Angalia Mali Daftari' : 'Explore Mali Daftari',
+                            ctaColor: AppColors.accentOrange,
+                            onTap: () {
+                              context.go('/mali-daftari');
+                            },
+                          ),
                         ),
                         const SizedBox(height: AppSizes.xl2),
-                        _ProblemScenarioCard(
-                          icon: Icons.insights_outlined,
-                          iconColor: AppColors.cyan,
-                          headline: language == 'sw'
-                              ? 'Una Data, Lakini Sio Maarifa'
-                              : 'You Have the Data,\nBut Not the Insights',
-                          problems: language == 'sw'
-                              ? [
-                                  'Umekuwa katika biashara kwa miaka na una rekodi—ripoti za mauzo, data za wateja, historia ya muamala—lakini inakaa tu... iko hapo',
-                                  'Unafanya maamuzi kulingana na hisia na uzoefu kwa sababu kutoa maarifa kutoka kwa data yako kunahisi kulemewa',
-                                  'Unajua kuna mifumo katika biashara yako (mwenendo wa msimu, tabia za wateja, utendaji wa bidhaa) lakini huwezi kuwaona wazi',
-                                  'Huna mchambuzi wa data aliyejitolea au timu ya BI, na kuajiri mmoja haupo katika bajeti',
-                                  'Umejaribu dashibodi za Excel au zana za kimsingi, lakini hupati ujuzi wa utabiri unaohitaji kubaki na ushindani'
-                                ]
-                              : [
-                                  'You\'ve been in business for years and have records—sales reports, customer data, transaction history—but it\'s just... sitting there',
-                                  'You make decisions based on gut feel and experience because extracting insights from your data feels overwhelming',
-                                  'You know there are patterns in your business (seasonal trends, customer behaviors, product performance) but you can\'t see them clearly',
-                                  'You don\'t have a dedicated data analyst or BI team, and hiring one isn\'t in the budget',
-                                  'You\'ve tried Excel dashboards or basic tools, but you\'re not getting the predictive intelligence you need to stay competitive'
-                                ],
-                          insight: language == 'sw'
-                              ? 'Tatizo si ukosefu wa data. Ni kwamba hujaomba kujifunza kwa mashine na uchambuzi ili kubadilisha data hiyo kuwa faida ya kimkakati.'
-                              : 'The problem isn\'t lack of data. It\'s that you\'re not applying machine learning and analytics to turn that data into strategic advantage.',
-                          solution: language == 'sw'
-                              ? 'Mali Akili imeundwa kwa hasa hii: biashara zilizoimarishwa zenye data zinazohitaji ujuzi. Tunachukua data yako iliyopo na kutumia kujifunza kwa mashine kukupa uchambuzi wa utabiri, utambuzi wa mwenendo, na mapendekezo ya kimkakati—bila kuhitaji timu yako ya sayansi ya data.'
-                              : 'Mali Akili is built for exactly this: established businesses with data who need intelligence. We take your existing data and apply machine learning to give you predictive analytics, trend identification, and strategic recommendations—without needing your own data science team.',
-                          ctaText: language == 'sw' ? 'Chunguza Mali Akili' : 'Explore Mali Akili',
-                          ctaColor: AppColors.cyan,
-                          onTap: () {
-                            context.go('/mali-akili');
-                          },
+                        AnimatedFadeIn(
+                          delay: const Duration(milliseconds: 400),
+                          duration: const Duration(milliseconds: 700),
+                          slideDistance: 30,
+                          child: _SelfDiagnosisCard(
+                            iconColor: AppColors.cyan,
+                            gradientColors: [
+                              const Color(0xFFF5FBFF),
+                              const Color(0xFFEBF7FC),
+                            ],
+                            headline: language == 'sw'
+                                ? 'Geuza Data kuwa Pesa'
+                                : 'Turn Data Into Money',
+                            painPoints: language == 'sw'
+                                ? [
+                                    _PainPoint(
+                                      category: 'Data Imelala:',
+                                      description: 'Mlima wa Ripoti. Una rekodi za miaka, lakini hazikusaidii kuuza zaidi.',
+                                    ),
+                                    _PainPoint(
+                                      category: 'Maamuzi:',
+                                      description: 'Hisia vs. Ukweli. Unategemea "uzoefu" badala ya ukweli wa namba zako.',
+                                    ),
+                                    _PainPoint(
+                                      category: 'Mienendo:',
+                                      description: 'Mitego ya Misimu. Hujui bidhaa gani itahitajika sana mwezi ujao.',
+                                    ),
+                                    _PainPoint(
+                                      category: 'Ushindani:',
+                                      description: 'Uchovu wa Excel. Unatumia muda mwingi kwenye makaratasi kuliko mkakati.',
+                                    ),
+                                  ]
+                                : [
+                                    _PainPoint(
+                                      category: 'Data Asleep:',
+                                      description: 'Mountain of Reports. Years of records but they don\'t help you sell more.',
+                                    ),
+                                    _PainPoint(
+                                      category: 'Decisions:',
+                                      description: 'Gut vs. Truth. Relying on "experience" instead of your numbers\' reality.',
+                                    ),
+                                    _PainPoint(
+                                      category: 'Patterns:',
+                                      description: 'Seasonal Traps. Don\'t know which products will be in high demand next month.',
+                                    ),
+                                    _PainPoint(
+                                      category: 'Competition:',
+                                      description: 'Excel Fatigue. More time on spreadsheets than strategy.',
+                                    ),
+                                  ],
+                            insight: language == 'sw'
+                                ? 'Tatizo sio data—ni ukosefu wa ujuzi wa kuitumia kama silaha ya ushindani.'
+                                : 'The problem isn\'t data—it\'s lacking the intelligence to use it as a competitive weapon.',
+                            solution: language == 'sw'
+                                ? 'Mali Akili ni timu yako ya AI: uchambuzi wa utabiri, mienendo, fursa—bila kuajiri wachambuzi wa data wenye bei ya juu.'
+                                : 'Mali Akili is your AI team: predictive analytics, patterns, opportunities—without hiring expensive data analysts.',
+                            ctaText: language == 'sw' ? 'Chunguza Mali Akili' : 'Explore Mali Akili',
+                            ctaColor: AppColors.cyan,
+                            onTap: () {
+                              context.go('/mali-akili');
+                            },
+                          ),
                         ),
                       ],
                     )
@@ -137,74 +201,134 @@ class ServiceCardsSection extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
-                          child: _ProblemScenarioCard(
-                            icon: Icons.inventory_2_outlined,
-                            iconColor: AppColors.accentOrange,
-                            headline: language == 'sw'
-                                ? 'Unasimamia Kila Kitu Kichwani Mwako'
-                                : 'You\'re Managing Everything\nin Your Head',
-                            problems: language == 'sw'
-                                ? [
-                                    'Huwezi kukumbuka kwa usahihi uliuza nini Jumanne iliyopita, kwa hivyo huna uhakika wa kitu gani cha kurejesha',
-                                    'Hesabu yako inaishi katika kumbukumbu yako, na unaogopa wakati huwezi kukumbuka kama uliagiza zaidi ya kitu fulani',
-                                    'Unaandika gharama katika vitabu tofauti, kwenye karatasi, kwenye simu yako—na kurekebisha ni kaburi',
-                                    'Unaamini wafanyakazi wako lakini huna njia ya kufuatilia kilichotokea wakati hukuwepo',
-                                    'Unataka kukua, labda kuongeza eneo la pili, lakini huna nambari za kuaminika za kujenga maamuzi'
-                                  ]
-                                : [
-                                    'You can\'t remember exactly what you sold last Tuesday, so you\'re not sure what to restock',
-                                    'Your inventory lives in your memory, and you panic when you can\'t recall if you ordered more of something',
-                                    'You write expenses in different notebooks, on papers, on your phone—and reconciling is a nightmare',
-                                    'You trust your employees but have no way to track what actually happened when you weren\'t there',
-                                    'You want to grow, maybe add a second location, but you don\'t have reliable numbers to base decisions on'
-                                  ],
-                            insight: language == 'sw'
-                                ? 'Tatizo si kwamba wewe ni mdanganyifu. Ni kwamba unaendesha biashara bila miundombinu ya kimsingi ya kunakili kinachoendelea kila siku.'
-                                : 'The problem isn\'t that you\'re disorganized. It\'s that you\'re running a business without the basic infrastructure to capture what\'s happening daily.',
-                            solution: language == 'sw'
-                                ? 'Mali Daftari inakupa miundombinu hiyo. Imeundwa kwa biashara kama yako—ambapo mmiliki anafanya kila kitu na anahitaji mfumo unaonakili mauzo, hesabu, gharama, na shughuli za wafanyakazi kwa wakati halisi, bila kuongeza ugumu.'
-                                : 'Mali Daftari gives you that infrastructure. It\'s built for businesses like yours—where the owner is doing everything and needs a system that captures sales, inventory, expenses, and staff activity in real-time, without adding complexity.',
-                            ctaText: language == 'sw' ? 'Angalia Jinsi Mali Daftari Inavyofanya Kazi' : 'See How Mali Daftari Works',
-                            ctaColor: AppColors.accentOrange,
-                            onTap: () {
-                              // TODO: Navigate to Mali Daftari page
-                            },
+                          child: AnimatedFadeIn(
+                            delay: const Duration(milliseconds: 200),
+                            duration: const Duration(milliseconds: 700),
+                            slideDistance: 40,
+                            child: _SelfDiagnosisCard(
+                              iconColor: AppColors.accentOrange,
+                              gradientColors: [
+                                const Color(0xFFFFFAF5),
+                                const Color(0xFFFFF5EB),
+                              ],
+                              headline: language == 'sw'
+                                  ? 'Simamia kwa Uhakika'
+                                  : 'Manage with Certainty',
+                              painPoints: language == 'sw'
+                                  ? [
+                                      _PainPoint(
+                                        category: 'Kumbukumbu:',
+                                        description: 'Kichwa kimejaa. Hukumbuki nani anadaiwa au nini kiliuzwa juzi.',
+                                      ),
+                                      _PainPoint(
+                                        category: 'Usimamizi:',
+                                        description: 'Ushirikina wa Hesabu. Daftari kupotea au kuharibika ni hofu ya kila siku.',
+                                      ),
+                                      _PainPoint(
+                                        category: 'Uaminifu:',
+                                        description: 'Wizi wa Siri. Huwezi kujua kilichotokea dukani ukiwa haupo.',
+                                      ),
+                                      _PainPoint(
+                                        category: 'Ukuaji:',
+                                        description: 'Giza la Maamuzi. Unataka kupanuka, lakini huna namba za uhakika.',
+                                      ),
+                                    ]
+                                  : [
+                                      _PainPoint(
+                                        category: 'Memory:',
+                                        description: 'Head is full. Can\'t remember who owes what or what sold yesterday.',
+                                      ),
+                                      _PainPoint(
+                                        category: 'Management:',
+                                        description: 'Inventory Chaos. Fear of losing or damaging notebooks is daily.',
+                                      ),
+                                      _PainPoint(
+                                        category: 'Trust:',
+                                        description: 'Silent Theft. Can\'t know what happened at the shop when you\'re away.',
+                                      ),
+                                      _PainPoint(
+                                        category: 'Growth:',
+                                        description: 'Decision Darkness. Want to expand but have no reliable numbers.',
+                                      ),
+                                    ],
+                              insight: language == 'sw'
+                                  ? 'Tatizo sio wewe—ni ukosefu wa miundombinu ya kimsingi ya kunasa data.'
+                                  : 'The problem isn\'t you—it\'s the lack of basic data capture infrastructure.',
+                              solution: language == 'sw'
+                                  ? 'Mali Daftari ni mfumo mzima wa usimamizi: mauzo, hesabu, gharama, wafanyakazi—kila kitu kwa wakati halisi, kutoka simu yako.'
+                                  : 'Mali Daftari is a complete management system: sales, inventory, expenses, staff—everything in real-time, from your phone.',
+                              ctaText: language == 'sw' ? 'Angalia Mali Daftari' : 'Explore Mali Daftari',
+                              ctaColor: AppColors.accentOrange,
+                              onTap: () {
+                                context.go('/mali-daftari');
+                              },
+                            ),
                           ),
                         ),
                         const SizedBox(width: AppSizes.xl2),
                         Expanded(
-                          child: _ProblemScenarioCard(
-                            icon: Icons.insights_outlined,
-                            iconColor: AppColors.cyan,
-                            headline: language == 'sw'
-                                ? 'Una Data, Lakini Sio Maarifa'
-                                : 'You Have the Data,\nBut Not the Insights',
-                            problems: language == 'sw'
-                                ? [
-                                    'Umekuwa katika biashara kwa miaka na una rekodi—ripoti za mauzo, data za wateja, historia ya muamala—lakini inakaa tu... iko hapo',
-                                    'Unafanya maamuzi kulingana na hisia na uzoefu kwa sababu kutoa maarifa kutoka kwa data yako kunahisi kulemewa',
-                                    'Unajua kuna mifumo katika biashara yako (mwenendo wa msimu, tabia za wateja, utendaji wa bidhaa) lakini huwezi kuwaona wazi',
-                                    'Huna mchambuzi wa data aliyejitolea au timu ya BI, na kuajiri mmoja haupo katika bajeti',
-                                    'Umejaribu dashibodi za Excel au zana za kimsingi, lakini hupati ujuzi wa utabiri unaohitaji kubaki na ushindani'
-                                  ]
-                                : [
-                                    'You\'ve been in business for years and have records—sales reports, customer data, transaction history—but it\'s just... sitting there',
-                                    'You make decisions based on gut feel and experience because extracting insights from your data feels overwhelming',
-                                    'You know there are patterns in your business (seasonal trends, customer behaviors, product performance) but you can\'t see them clearly',
-                                    'You don\'t have a dedicated data analyst or BI team, and hiring one isn\'t in the budget',
-                                    'You\'ve tried Excel dashboards or basic tools, but you\'re not getting the predictive intelligence you need to stay competitive'
-                                  ],
-                            insight: language == 'sw'
-                                ? 'Tatizo si ukosefu wa data. Ni kwamba hakuna teknolojia za uchambuzi ili kubadilisha data hiyo kuwa faida ya kimkakati.'
-                                : 'The problem isn\'t lack of data. It\'s that you\'re not applying machine learning and analytics to turn that data into strategic advantage.',
-                            solution: language == 'sw'
-                                ? 'Mali Akili imeundwa kwa hasa hii: biashara zilizoimarishwa zenye data zinazohitaji ujuzi. Tunachukua data yako iliyopo na kutumia kujifunza kwa mashine kukupa uchambuzi wa utabiri, utambuzi wa mwenendo, na mapendekezo ya kimkakati—bila kuhitaji timu yako ya sayansi ya data.'
-                                : 'Mali Akili is built for exactly this: established businesses with data who need intelligence. We take your existing data and apply machine learning to give you predictive analytics, trend identification, and strategic recommendations—without needing your own data science team.',
-                            ctaText: language == 'sw' ? 'Chunguza Mali Akili' : 'Explore Mali Akili',
-                            ctaColor: AppColors.cyan,
-                            onTap: () {
-                              // TODO: Navigate to Mali Akili page
-                            },
+                          child: AnimatedFadeIn(
+                            delay: const Duration(milliseconds: 400),
+                            duration: const Duration(milliseconds: 700),
+                            slideDistance: 40,
+                            child: _SelfDiagnosisCard(
+                              iconColor: AppColors.cyan,
+                              gradientColors: [
+                                const Color(0xFFF5FBFF),
+                                const Color(0xFFEBF7FC),
+                              ],
+                              headline: language == 'sw'
+                                  ? 'Geuza Data kuwa Pesa'
+                                  : 'Turn Data Into Money',
+                              painPoints: language == 'sw'
+                                  ? [
+                                      _PainPoint(
+                                        category: 'Data Imelala:',
+                                        description: 'Mlima wa Ripoti. Una rekodi za miaka, lakini hazikusaidii kuuza zaidi.',
+                                      ),
+                                      _PainPoint(
+                                        category: 'Maamuzi:',
+                                        description: 'Hisia vs. Ukweli. Unategemea "uzoefu" badala ya ukweli wa namba zako.',
+                                      ),
+                                      _PainPoint(
+                                        category: 'Mienendo:',
+                                        description: 'Mitego ya Misimu. Hujui bidhaa gani itahitajika sana mwezi ujao.',
+                                      ),
+                                      _PainPoint(
+                                        category: 'Ushindani:',
+                                        description: 'Uchovu wa Excel. Unatumia muda mwingi kwenye makaratasi kuliko mkakati.',
+                                      ),
+                                    ]
+                                  : [
+                                      _PainPoint(
+                                        category: 'Data Asleep:',
+                                        description: 'Mountain of Reports. Years of records but they don\'t help you sell more.',
+                                      ),
+                                      _PainPoint(
+                                        category: 'Decisions:',
+                                        description: 'Gut vs. Truth. Relying on "experience" instead of your numbers\' reality.',
+                                      ),
+                                      _PainPoint(
+                                        category: 'Patterns:',
+                                        description: 'Seasonal Traps. Don\'t know which products will be in high demand next month.',
+                                      ),
+                                      _PainPoint(
+                                        category: 'Competition:',
+                                        description: 'Excel Fatigue. More time on spreadsheets than strategy.',
+                                      ),
+                                    ],
+                              insight: language == 'sw'
+                                  ? 'Tatizo sio data—ni ukosefu wa ujuzi wa kuitumia kama silaha ya ushindani.'
+                                  : 'The problem isn\'t data—it\'s lacking the intelligence to use it as a competitive weapon.',
+                              solution: language == 'sw'
+                                  ? 'Mali Akili ni timu yako ya AI: uchambuzi wa utabiri, mienendo, fursa—bila kuajiri wachambuzi wa data wenye bei ya juu.'
+                                  : 'Mali Akili is your AI team: predictive analytics, patterns, opportunities—without hiring expensive data analysts.',
+                              ctaText: language == 'sw' ? 'Chunguza Mali Akili' : 'Explore Mali Akili',
+                              ctaColor: AppColors.cyan,
+                              onTap: () {
+                                context.go('/mali-akili');
+                              },
+                            ),
                           ),
                         ),
                       ],
@@ -217,22 +341,32 @@ class ServiceCardsSection extends ConsumerWidget {
   }
 }
 
-class _ProblemScenarioCard extends StatefulWidget {
-  final IconData icon;
+class _PainPoint {
+  final String category;
+  final String description;
+
+  _PainPoint({
+    required this.category,
+    required this.description,
+  });
+}
+
+class _SelfDiagnosisCard extends StatefulWidget {
   final Color iconColor;
+  final List<Color> gradientColors;
   final String headline;
-  final List<String> problems;
+  final List<_PainPoint> painPoints;
   final String insight;
   final String solution;
   final String ctaText;
   final Color ctaColor;
   final VoidCallback onTap;
 
-  const _ProblemScenarioCard({
-    required this.icon,
+  const _SelfDiagnosisCard({
     required this.iconColor,
+    required this.gradientColors,
     required this.headline,
-    required this.problems,
+    required this.painPoints,
     required this.insight,
     required this.solution,
     required this.ctaText,
@@ -241,11 +375,12 @@ class _ProblemScenarioCard extends StatefulWidget {
   });
 
   @override
-  State<_ProblemScenarioCard> createState() => _ProblemScenarioCardState();
+  State<_SelfDiagnosisCard> createState() => _SelfDiagnosisCardState();
 }
 
-class _ProblemScenarioCardState extends State<_ProblemScenarioCard> {
+class _SelfDiagnosisCardState extends State<_SelfDiagnosisCard> {
   bool _isHovered = false;
+  bool _isCtaHovered = false;
 
   @override
   Widget build(BuildContext context) {
@@ -253,82 +388,65 @@ class _ProblemScenarioCardState extends State<_ProblemScenarioCard> {
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 400),
+        curve: Curves.easeOutCubic,
+        transform: Matrix4.identity()
+          ..translate(0.0, _isHovered ? -8.0 : 0.0),
         decoration: BoxDecoration(
-          color: AppColors.white,
-          borderRadius: BorderRadius.circular(AppSizes.radiusLg),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: widget.gradientColors,
+          ),
+          borderRadius: BorderRadius.circular(AppSizes.radiusXl),
           border: Border.all(
             color: _isHovered 
-                ? widget.iconColor.withOpacity(0.3) 
-                : AppColors.lightGray,
-            width: 1.5,
+                ? widget.iconColor.withOpacity(0.5) 
+                : widget.iconColor.withOpacity(0.2),
+            width: 2,
           ),
           boxShadow: [
             BoxShadow(
               color: _isHovered
                   ? widget.iconColor.withOpacity(0.15)
                   : Colors.black.withOpacity(0.05),
-              blurRadius: _isHovered ? 30 : 15,
-              offset: Offset(0, _isHovered ? 12 : 6),
+              blurRadius: _isHovered ? 40 : 20,
+              offset: Offset(0, _isHovered ? 20 : 10),
+              spreadRadius: _isHovered ? 2 : 0,
             ),
           ],
         ),
         child: Padding(
-          padding: const EdgeInsets.all(AppSizes.xl2),
+          padding: const EdgeInsets.all(AppSizes.xl3),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Icon
-              Container(
-                width: 64,
-                height: 64,
-                decoration: BoxDecoration(
-                  color: widget.iconColor.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(AppSizes.radiusMd),
-                ),
-                child: Icon(
-                  widget.icon,
-                  color: widget.iconColor,
-                  size: 32,
-                ),
-              ),
-              
-              const SizedBox(height: AppSizes.xl),
-              
-              // Headline
+              // Headline with improved typography
               Text(
                 widget.headline,
-                style: AppTextStyles.h2(context).copyWith(
-                  fontSize: 28,
-                  fontWeight: FontWeight.w700,
+                style: AppTextStyles.h1(context).copyWith(
+                  fontSize: 34,
+                  fontWeight: FontWeight.w800,
                   color: AppColors.darkNavy,
-                  height: 1.2,
+                  height: 1.1,
+                  letterSpacing: -0.8,
                 ),
               ),
               
-              const SizedBox(height: AppSizes.lg),
+              const SizedBox(height: AppSizes.xl2),
               
-              // Problems List
-              Text(
-                'Do these sound familiar?',
-                style: AppTextStyles.bodyMedium(context).copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.darkNavy,
-                ),
-              ),
-              
-              const SizedBox(height: AppSizes.md),
-              
-              ...widget.problems.map((problem) => Padding(
-                padding: const EdgeInsets.only(bottom: AppSizes.sm),
+              // Pain Points with refined styling
+              ...widget.painPoints.map((point) => Padding(
+                padding: const EdgeInsets.only(bottom: AppSizes.lg),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Decorative dot
                     Padding(
-                      padding: const EdgeInsets.only(top: 6),
+                      padding: const EdgeInsets.only(top: 7),
                       child: Container(
-                        width: 6,
-                        height: 6,
+                        width: 5,
+                        height: 5,
                         decoration: BoxDecoration(
                           color: widget.iconColor,
                           shape: BoxShape.circle,
@@ -337,11 +455,28 @@ class _ProblemScenarioCardState extends State<_ProblemScenarioCard> {
                     ),
                     const SizedBox(width: AppSizes.sm),
                     Expanded(
-                      child: Text(
-                        problem,
-                        style: AppTextStyles.bodySmall(context).copyWith(
-                          color: AppColors.textGray,
-                          height: 1.6,
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: point.category,
+                              style: AppTextStyles.bodyMedium(context).copyWith(
+                                color: widget.iconColor,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 15,
+                                height: 1.7,
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' ${point.description}',
+                              style: AppTextStyles.bodyMedium(context).copyWith(
+                                color: AppColors.darkNavy.withOpacity(0.85),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 15,
+                                height: 1.7,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -349,75 +484,119 @@ class _ProblemScenarioCardState extends State<_ProblemScenarioCard> {
                 ),
               )).toList(),
               
-              const SizedBox(height: AppSizes.lg),
+              const SizedBox(height: AppSizes.xl),
               
-              // Insight
+              // Insight box with enhanced styling
               Container(
-                padding: const EdgeInsets.all(AppSizes.md),
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSizes.lg,
+                  vertical: AppSizes.md,
+                ),
                 decoration: BoxDecoration(
-                  color: widget.iconColor.withOpacity(0.05),
-                  borderRadius: BorderRadius.circular(AppSizes.radiusSm),
+                  color: widget.iconColor.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(AppSizes.radiusMd),
                   border: Border.all(
-                    color: widget.iconColor.withOpacity(0.2),
-                    width: 1,
+                    color: widget.iconColor.withOpacity(0.3),
+                    width: 1.5,
                   ),
                 ),
-                child: Text(
-                  widget.insight,
-                  style: AppTextStyles.bodySmall(context).copyWith(
-                    color: AppColors.darkNavy,
-                    fontWeight: FontWeight.w500,
-                    height: 1.6,
-                  ),
-                ),
-              ),
-              
-              const SizedBox(height: AppSizes.lg),
-              
-              // Solution
-              Text(
-                widget.solution,
-                style: AppTextStyles.bodyMedium(context).copyWith(
-                  color: AppColors.textGray,
-                  height: 1.7,
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.lightbulb_outline,
+                      color: widget.iconColor,
+                      size: 18,
+                    ),
+                    const SizedBox(width: AppSizes.sm),
+                    Expanded(
+                      child: Text(
+                        widget.insight,
+                        style: AppTextStyles.bodySmall(context).copyWith(
+                          color: AppColors.darkNavy,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14,
+                          height: 1.5,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               
               const SizedBox(height: AppSizes.xl),
               
-              // CTA Button
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: widget.onTap,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: widget.ctaColor,
-                    foregroundColor: AppColors.white,
-                    padding: const EdgeInsets.symmetric(
-                      vertical: AppSizes.md,
-                      horizontal: AppSizes.lg,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(AppSizes.radiusSm),
-                    ),
-                    elevation: 0,
+              // Solution with improved readability
+              Text(
+                widget.solution,
+                style: AppTextStyles.bodyMedium(context).copyWith(
+                  color: AppColors.darkNavy.withOpacity(0.75),
+                  height: 1.7,
+                  fontSize: 15,
+                ),
+              ),
+              
+              const SizedBox(height: AppSizes.xl2),
+              
+              // Enhanced CTA Button
+              MouseRegion(
+                onEnter: (_) => setState(() => _isCtaHovered = true),
+                onExit: (_) => setState(() => _isCtaHovered = false),
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeOutCubic,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(AppSizes.radiusMd),
+                    boxShadow: _isCtaHovered
+                        ? [
+                            BoxShadow(
+                              color: widget.ctaColor.withOpacity(0.4),
+                              blurRadius: 20,
+                              offset: const Offset(0, 8),
+                            ),
+                          ]
+                        : [],
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        widget.ctaText,
-                        style: AppTextStyles.bodyMedium(context).copyWith(
-                          color: AppColors.white,
-                          fontWeight: FontWeight.w600,
+                  child: ElevatedButton(
+                    onPressed: widget.onTap,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: widget.ctaColor,
+                      foregroundColor: AppColors.white,
+                      padding: const EdgeInsets.symmetric(
+                        vertical: AppSizes.lg,
+                        horizontal: AppSizes.xl,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(AppSizes.radiusMd),
+                      ),
+                      elevation: 0,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          widget.ctaText,
+                          style: AppTextStyles.bodyLarge(context).copyWith(
+                            color: AppColors.white,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16,
+                            letterSpacing: 0.2,
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: AppSizes.xs),
-                      const Icon(
-                        Icons.arrow_forward,
-                        size: 18,
-                      ),
-                    ],
+                        const SizedBox(width: AppSizes.sm),
+                        AnimatedSlide(
+                          duration: const Duration(milliseconds: 200),
+                          offset: Offset(_isCtaHovered ? 0.3 : 0, 0),
+                          curve: Curves.easeOutCubic,
+                          child: const Icon(
+                            Icons.arrow_forward,
+                            size: 20,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
