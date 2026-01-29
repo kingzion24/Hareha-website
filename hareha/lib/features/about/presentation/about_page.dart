@@ -18,7 +18,7 @@ class AboutPage extends ConsumerWidget {
 
     return Scaffold(
       backgroundColor: AppColors.white,
-      appBar: const AppBarWidget(),
+      appBar: AppBarWidget(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -55,7 +55,7 @@ class _HeroSection extends StatelessWidget {
           constraints: BoxConstraints(maxWidth: responsive.maxContainerWidth),
           padding: EdgeInsets.symmetric(
             horizontal: responsive.horizontalPadding,
-            vertical: responsive.isMobile ? AppSizes.xl3 : AppSizes.xl4,
+            vertical: responsive.isMobile ? AppSizes.xl : AppSizes.xl,
           ),
           child: AnimatedFadeIn(
             child: Column(
@@ -196,7 +196,7 @@ class _ProblemSection extends StatelessWidget {
                 const SizedBox(height: AppSizes.xl),
                 Text(
                   language == 'sw'
-                      ? 'Biashara za Kitanzania zinafanya maamuzi gizani. Biashara zisizo rasmi zinafuatilia kila kitu kupitia kumbukumbu na madaftari mauzo yanachanganyika pamoja, hesabu ya bidhaa inapotea, gharama zinatawanyika kwenye karatasi.Biashara inahitaji kujibu maswali: Bidhaa zipi zinazalisha faida? Unatumia kiasi gani kwa kweli kila mwezi? Makampuni makubwa na saizi za kati yana tatizo kinyume: miaka ya data inakaa bila kutumika. Mifumo haionekani. Maarifa yamezikwa. Bila wachambuzi, data hiyo haina msaada kwako. Matokeo ni sawa kwa njia zote mbili: maamuzi muhimu yanayofanywa kwa matumaini badala ya ushahidi.'
+                      ? 'Biashara za Kitanzania zinafanya maamuzi gizani. Biashara ndogondogo zinafuatilia kila kitu kupitia kumbukumbu na madaftari mauzo yanachanganyika pamoja, hesabu ya bidhaa inapotea, gharama zinatawanyika kwenye karatasi.Biashara inahitaji kujibu maswali: Bidhaa zipi zinazalisha faida? Unatumia kiasi gani kwa kweli kila mwezi? Makampuni makubwa na saizi za kati yana tatizo kinyume: miaka ya data inakaa bila kutumika. Mifumo haionekani. Maarifa yamezikwa. Bila wachambuzi, data hiyo haina msaada kwako. Matokeo ni sawa kwa njia zote mbili: maamuzi muhimu yanayofanywa kwa matumaini badala ya ushahidi.'
                       : 'Tanzanian businesses are making decisions in the dark. Informal businesses track everything through memory and notebooks—sales blur together, inventory counts disappear, expenses scatter across random papers. Growth requires answering questions you can\'t: Which products profit? What do you really spend monthly? Established companies have the opposite problem: years of data sitting unused in spreadsheets. Patterns unseen. Insights buried. Without analysts, that data might as well not exist. Same result either way: critical decisions made on hope rather than evidence.',
                   style: AppTextStyles.bodyLarge(context).copyWith(
                     color: AppColors.white.withOpacity(0.9),
@@ -346,8 +346,8 @@ class _SolutionSection extends StatelessWidget {
                       const SizedBox(height: AppSizes.md),
                       Text(
                         language == 'sw'
-                            ? 'Huduma za AI kwa Mashirika Makubwa'
-                            : 'AI Services for Large Organizations',
+                            ? 'Huduma za Uchambuzi kwa Mashirika Makubwa'
+                            : 'Business Intelligence Services for Large Organizations',
                         style: AppTextStyles.h3(context).copyWith(
                           color: AppColors.darkNavy,
                         ),

@@ -50,7 +50,7 @@ class StrategicPartnerSection extends ConsumerWidget {
                     // Body Paragraph
                     Text(
                       language == 'sw'
-                          ? 'Biashara za Kitanzania zinafanya maamuzi gizani. Biashara zisizo rasmi zinafuatilia kila kitu kupitia kumbukumbu na vitabu—mauzo yanachanganyika pamoja, hesabu ya bidhaa inapotea, gharama zinatawanyika kwenye karatasi za nasibu. Ukuaji unahitaji kujibu maswali usiyoweza: Bidhaa zipi zinazalisha faida? Unatumia kiasi gani kwa kweli kila mwezi? Makampuni yaliyoimarishwa yana tatizo kinyume: miaka ya data inakaa bila kutumika katika jedwali. Mifumo haionekani. Maarifa yamezikwa. Bila wachambuzi, data hiyo inaweza pia kutokuwepo. Matokeo ni sawa kwa njia zote mbili: maamuzi muhimu yanayofanywa kwa matumaini badala ya ushahidi.'
+                          ? 'Biashara za Kitanzania zinafanya maamuzi gizani. Biashara zisizo ndogo na za kati zinafuatilia kila kitu kupitia kumbukumbu na kwenye madaftari, hesabu ya bidhaa inapotea, gharama zinatabaki kwenye risiti na risiti hupotea. Ukuaji unahitaji kujibu maswali kama: Bidhaa zipi zinazalisha faida sana? Mzigo gani umebaki store ? Unatumia kiasi gani kwa kweli kila mwezi? Kwa makampuni makubwa:  data ipo nyingi inakaa bila kutumika . Mifumo haionekani. Maarifa yamezikwa. Bila wachambuzi, data hiyo haina faida yoyote. Matokeo ni sawa kwa njia zote mbili: maamuzi muhimu yanayofanywa kwa matumaini badala ya ushahidi.'
                           : 'Tanzanian businesses are making decisions in the dark. Informal businesses track everything through memory and notebooks—sales blur together, inventory counts disappear, expenses scatter across random papers. Growth requires answering questions you can\'t: Which products profit? What do you really spend monthly? Established companies have the opposite problem: years of data sitting unused in spreadsheets. Patterns unseen. Insights buried. Without analysts, that data might as well not exist. Same result either way: critical decisions made on hope rather than evidence.',
                       style: AppTextStyles.bodyMedium(context).copyWith(
                         color: AppColors.textGray,
@@ -76,8 +76,8 @@ class StrategicPartnerSection extends ConsumerWidget {
                               value: '23',
                               suffix: '%',
                               label: language == 'sw' 
-                                  ? 'Ongezeko la wastani la mapato kwa SMEs zinazotekeleza miundombinu ya data ya mfumo—ikiwa ni kunakili shughuli za kila siku au kuchambua mwenendo wa kihistoria' 
-                                  : 'Average revenue increase for SMEs implementing systematic data infrastructure—whether capturing daily operations or analyzing historical trends',
+                                  ? 'Ongezeko la wastani la mapato kwa SMEs zinazotekeleza miundombinu ya data ya mfumo ikiwa ni kunakili shughuli za kila siku au kuchambua mwenendo wa kihistoria' 
+                                  : 'Average revenue increase for SMEs implementing systematic data infrastructure whether capturing daily operations or analyzing historical trends',
                               delay: const Duration(milliseconds: 0),
                             ),
                             const SizedBox(height: AppSizes.xl),
@@ -86,7 +86,7 @@ class StrategicPartnerSection extends ConsumerWidget {
                               value: '40',
                               suffix: '%',
                               label: language == 'sw'
-                                  ? 'Kupungua kwa gharama za uendeshaji na kutoelewana kupitia ufanya maamuzi kulingana na data na maarifa ya utabiri'
+                                  ? 'Kupungua kwa gharama za uendeshaji kupitia ufanya maamuzi kulingana na data na maarifa ya utabiri'
                                   : 'Reduction in operational costs and inefficiencies through data-driven decision-making and predictive insights',
                               delay: const Duration(milliseconds: 200),
                             ),
