@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow available'\\)\")",
+      "Bash(python -c \"from PIL import Image; print\\('Pillow available'\\)\")",
+      "Bash(C:\\\\Python314\\\\python.exe -c \"from PIL import Image; print\\('ok'\\)\")",
+      "Bash(C:\\\\Users\\\\zion\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe -c \"from PIL import Image; print\\('ok'\\)\")",
+      "Bash(C:\\\\Users\\\\zion\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe -c \"from PIL import Image; print\\('ok'\\)\")",
+      "Bash(py -3.11 -c \"from PIL import Image; print\\('ok'\\)\")",
+      "Bash(py -3.10 -c \"from PIL import Image; print\\('ok'\\)\")",
+      "Bash(py -3 -c \"from PIL import Image; print\\('ok'\\)\")"
+    ]
+  }
+}
