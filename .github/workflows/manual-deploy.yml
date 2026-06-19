@@ -1,0 +1,49 @@
+name: Manual Flutter Web Deployment
+
+# 1. The Trigger
+on:
+  workflow_dispatch: # This enables the "Run workflow" button in the GitHub UI
+
+# 2. Required Permissions
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 3. Concurrency (Prevents multiple builds from colliding)
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build Web Application
+        # Because you are using a custom domain, your base-href is correctly left as the default "/"
+        run: flutter build web --release
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # This tells GitHub to grab the exact folder Flutter just built
+          path: 'build/web'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
