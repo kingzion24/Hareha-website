@@ -91,10 +91,10 @@ class HeroSection extends ConsumerWidget {
             vertical: AppSizes.xs,
           ),
           decoration: BoxDecoration(
-            color: AppColors.white.withOpacity(0.1),
+            color: AppColors.white.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(AppSizes.radiusFull),
             border: Border.all(
-              color: AppColors.white.withOpacity(0.3),
+              color: AppColors.white.withValues(alpha: 0.3),
             ),
           ),
           child: Text(
@@ -131,7 +131,7 @@ class HeroSection extends ConsumerWidget {
         (
           padding: const EdgeInsets.all(AppSizes.xl),
           decoration: BoxDecoration(
-            color: AppColors.cyan.withOpacity(0.15),
+            color: AppColors.cyan.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(AppSizes.radiusLg),
           ),
           child: Column
@@ -229,7 +229,7 @@ class HeroSection extends ConsumerWidget {
         borderRadius: BorderRadius.circular(AppSizes.radiusXl),
         boxShadow: [
           BoxShadow(
-            color: AppColors.cyan.withOpacity(0.2),
+            color: AppColors.cyan.withValues(alpha: 0.2),
             blurRadius: 30,
             offset: const Offset(0, 15),
           ),
@@ -243,10 +243,10 @@ class HeroSection extends ConsumerWidget {
           errorBuilder: (context, error, stackTrace) {
             return Container(
               decoration: BoxDecoration(
-                color: AppColors.white.withOpacity(0.05),
+                color: AppColors.white.withValues(alpha: 0.05),
                 borderRadius: BorderRadius.circular(AppSizes.radiusXl),
                 border: Border.all(
-                  color: AppColors.white.withOpacity(0.1),
+                  color: AppColors.white.withValues(alpha: 0.1),
                 ),
               ),
               child: Center(
@@ -256,13 +256,13 @@ class HeroSection extends ConsumerWidget {
                     Icon(
                       Icons.analytics,
                       size: 80,
-                      color: AppColors.white.withOpacity(0.3),
+                      color: AppColors.white.withValues(alpha: 0.3),
                     ),
                     const SizedBox(height: AppSizes.md),
                     Text(
                       'Hero Image',
                       style: AppTextStyles.bodyMedium(context).copyWith(
-                        color: AppColors.white.withOpacity(0.5),
+                        color: AppColors.white.withValues(alpha: 0.5),
                       ),
                     ),
                   ],

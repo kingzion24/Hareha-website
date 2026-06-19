@@ -22,8 +22,8 @@ class MDAISection extends ConsumerWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            AppColors.accentPurple.withOpacity(0.05),
-            AppColors.cyan.withOpacity(0.05),
+            AppColors.accentPurple.withValues(alpha: 0.05),
+            AppColors.cyan.withValues(alpha: 0.05),
           ],
         ),
       ),
@@ -89,7 +89,7 @@ class MDAISection extends ConsumerWidget {
         borderRadius: BorderRadius.circular(AppSizes.radiusXl),
         boxShadow: [
           BoxShadow(
-            color: AppColors.accentPurple.withOpacity(0.3),
+            color: AppColors.accentPurple.withValues(alpha: 0.3),
             blurRadius: 30,
             offset: const Offset(0, 15),
           ),
@@ -182,10 +182,10 @@ class MDAISection extends ConsumerWidget {
             vertical: AppSizes.xs,
           ),
           decoration: BoxDecoration(
-            color: AppColors.accentPurple.withOpacity(0.1),
+            color: AppColors.accentPurple.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(AppSizes.radiusFull),
             border: Border.all(
-              color: AppColors.accentPurple.withOpacity(0.3),
+              color: AppColors.accentPurple.withValues(alpha: 0.3),
             ),
           ),
           child: Row(
@@ -249,7 +249,7 @@ class MDAISection extends ConsumerWidget {
                   Container(
                     padding: const EdgeInsets.all(AppSizes.xs),
                     decoration: BoxDecoration(
-                      color: AppColors.accentPurple.withOpacity(0.1),
+                      color: AppColors.accentPurple.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(AppSizes.radiusSm),
                     ),
                     child: Icon(

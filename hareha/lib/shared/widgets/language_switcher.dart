@@ -200,7 +200,7 @@ class _ToggleSwitcher extends StatelessWidget {
         Switch(
           value: language == 'sw',
           onChanged: (value) => onLanguageChanged(value ? 'sw' : 'en'),
-          activeColor: AppColors.cyan,
+          activeThumbColor: AppColors.cyan,
         ),
         const SizedBox(width: AppSizes.sm),
         Text(

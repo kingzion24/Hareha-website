@@ -184,7 +184,7 @@ class _PathCardState extends State<_PathCard> {
             ),
             boxShadow: [
               BoxShadow(
-                color: widget.color.withOpacity(_isHovered ? 0.15 : 0.05),
+                color: widget.color.withValues(alpha: _isHovered ? 0.15 : 0.05),
                 blurRadius: _isHovered ? 30 : 15,
                 offset: Offset(0, _isHovered ? 10 : 5),
               ),

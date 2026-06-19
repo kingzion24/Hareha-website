@@ -88,8 +88,8 @@ class _MDHeroSectionState extends ConsumerState<MDHeroSection> {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            AppColors.accentOrange.withOpacity(0.1),
-            AppColors.cyan.withOpacity(0.1),
+            AppColors.accentOrange.withValues(alpha: 0.1),
+            AppColors.cyan.withValues(alpha: 0.1),
             AppColors.white,
           ],
         ),
@@ -157,7 +157,7 @@ class _MDHeroSectionState extends ConsumerState<MDHeroSection> {
                     height: isMobile ? 50 : 60,
                     width: isMobile ? 50 : 60,
                     decoration: BoxDecoration(
-                      color: AppColors.accentOrange.withOpacity(0.2),
+                      color: AppColors.accentOrange.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(AppSizes.radiusSm),
                     ),
                     child: Icon(
@@ -265,7 +265,7 @@ class _MDHeroSectionState extends ConsumerState<MDHeroSection> {
               borderRadius: BorderRadius.circular(AppSizes.radiusXl),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.accentOrange.withOpacity(0.3),
+                  color: AppColors.accentOrange.withValues(alpha: 0.3),
                   blurRadius: 30,
                   offset: const Offset(0, 15),
                 ),
@@ -320,7 +320,7 @@ class _MDHeroSectionState extends ConsumerState<MDHeroSection> {
                   decoration: BoxDecoration(
                     color: _currentScreenshot == index
                         ? AppColors.accentOrange
-                        : AppColors.textGray.withOpacity(0.3),
+                        : AppColors.textGray.withValues(alpha: 0.3),
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),
@@ -346,7 +346,7 @@ class _MDHeroSectionState extends ConsumerState<MDHeroSection> {
         color: AppColors.lightGray,
         borderRadius: BorderRadius.circular(AppSizes.radiusFull),
         border: Border.all(
-          color: AppColors.textGray.withOpacity(0.3),
+          color: AppColors.textGray.withValues(alpha: 0.3),
           width: 1.5,
         ),
       ),

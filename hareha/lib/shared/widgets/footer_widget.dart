@@ -307,7 +307,7 @@ class FooterWidget extends ConsumerWidget {
                 width: responsive.isMobile ? 80 : 120,
                 height: responsive.isMobile ? 80 : 120,
                 decoration: BoxDecoration(
-                  color: AppColors.white.withOpacity(0.1),
+                  color: AppColors.white.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.radiusMd),
                 ),
                 child: Icon(
@@ -407,10 +407,10 @@ class _SocialButton extends StatelessWidget {
           vertical: AppSizes.sm,
         ),
         decoration: BoxDecoration(
-          color: AppColors.white.withOpacity(0.05),
+          color: AppColors.white.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(AppSizes.radiusMd),
           border: Border.all(
-            color: AppColors.white.withOpacity(0.1),
+            color: AppColors.white.withValues(alpha: 0.1),
           ),
         ),
         child: Row(

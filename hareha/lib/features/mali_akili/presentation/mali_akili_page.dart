@@ -97,7 +97,7 @@ class _HeroSection extends StatelessWidget {
                         ? 'Jukwaa kamili la uchambuzi kwa biashara zilizoimarishwa za Kitanzania, makampuni makubwa, na NGOs ambazo tayari zina data lakini hazina ujuzi wa kutoa thamani ya kimkakati kutoka kwake.'
                         : 'A comprehensive analytics platform for established Tanzanian businesses, corporations, and NGOs that already have data but lack the expertise to extract strategic value from it.',
                     style: AppTextStyles.bodyLarge(context).copyWith(
-                      color: AppColors.white.withOpacity(0.95),
+                      color: AppColors.white.withValues(alpha: 0.95),
                       height: 1.7,
                       fontSize: responsive.isMobile ? 16 : 18,
                     ),
@@ -267,10 +267,10 @@ class _FeatureCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSizes.lg),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.05),
+        color: color.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(AppSizes.radiusLg),
         border: Border.all(
-          color: color.withOpacity(0.2),
+          color: color.withValues(alpha: 0.2),
           width: 1,
         ),
       ),
@@ -281,7 +281,7 @@ class _FeatureCard extends StatelessWidget {
             width: 48,
             height: 48,
             decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(AppSizes.radiusMd),
             ),
             child: Icon(
@@ -364,7 +364,7 @@ class _HowYouAccessSection extends StatelessWidget {
                       ? 'Kupitia dashibodi rahisi zinazoweka wazi biashara yako kwa wakati halisi, ripoti za kiotomatiki zinazozieleza matokeo kwa lugha rahisi, na chatbot ya AI inayozungumza Kiswahili na Kiingereza inayojibu maswali yako ya kimkakati mara moja—hakuna ujuzi wa kiufundi unaohitajika. Badala ya kuajiri wanasayansi wa data wa bei ya juu au kujenga miundombinu changamano, unapata uchambuzi wa kiwango cha kampuni kubwa kama huduma iliyosimamiwa kabisa, iliyoundwa hasa kwa ukweli wa soko la Afrika Mashariki na kutolewa kwa sehemu ndogo ya gharama za kawaida za BI.'
                       : 'Through intuitive dashboards that visualize your business in real-time, automated reports that explain findings in plain language, and an AI chatbot fluent in Swahili and English that answers your strategic questions instantly—no technical expertise required. Instead of hiring expensive data scientists or building complex infrastructure, you get enterprise-grade analytics as a fully-managed service, designed specifically for East African market realities and delivered at a fraction of traditional BI costs.',
                   style: AppTextStyles.bodyLarge(context).copyWith(
-                    color: AppColors.white.withOpacity(0.95),
+                    color: AppColors.white.withValues(alpha: 0.95),
                     height: 1.8,
                     fontSize: responsive.isMobile ? 16 : 18,
                   ),
@@ -459,10 +459,10 @@ class _AccessMethodCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSizes.xl),
       decoration: BoxDecoration(
-        color: AppColors.white.withOpacity(0.05),
+        color: AppColors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(AppSizes.radiusLg),
         border: Border.all(
-          color: AppColors.white.withOpacity(0.1),
+          color: AppColors.white.withValues(alpha: 0.1),
           width: 1,
         ),
       ),
@@ -472,7 +472,7 @@ class _AccessMethodCard extends StatelessWidget {
             width: 64,
             height: 64,
             decoration: BoxDecoration(
-              color: AppColors.cyan.withOpacity(0.2),
+              color: AppColors.cyan.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(AppSizes.radiusMd),
             ),
             child: Icon(
@@ -494,7 +494,7 @@ class _AccessMethodCard extends StatelessWidget {
           Text(
             description,
             style: AppTextStyles.bodySmall(context).copyWith(
-              color: AppColors.white.withOpacity(0.8),
+              color: AppColors.white.withValues(alpha: 0.8),
               height: 1.6,
             ),
             textAlign: TextAlign.center,
@@ -674,8 +674,8 @@ class _ServiceCardState extends State<_ServiceCard> {
             boxShadow: [
               BoxShadow(
                 color: _isHovered
-                    ? widget.color.withOpacity(0.2)
-                    : Colors.black.withOpacity(0.05),
+                    ? widget.color.withValues(alpha: 0.2)
+                    : Colors.black.withValues(alpha: 0.05),
                 blurRadius: _isHovered ? 20 : 10,
                 offset: Offset(0, _isHovered ? 8 : 4),
               ),
@@ -821,7 +821,7 @@ class _IndustryChip extends StatelessWidget {
         color: AppColors.white,
         borderRadius: BorderRadius.circular(AppSizes.radiusFull),
         border: Border.all(
-          color: AppColors.cyan.withOpacity(0.3),
+          color: AppColors.cyan.withValues(alpha: 0.3),
           width: 1,
         ),
       ),
@@ -970,7 +970,7 @@ class _BenefitCard extends StatelessWidget {
         color: AppColors.mediumGray,
         borderRadius: BorderRadius.circular(AppSizes.radiusLg),
         border: Border.all(
-          color: AppColors.cyan.withOpacity(0.2),
+          color: AppColors.cyan.withValues(alpha: 0.2),
           width: 1,
         ),
       ),
@@ -982,7 +982,7 @@ class _BenefitCard extends StatelessWidget {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: AppColors.accentGreen.withOpacity(0.1),
+              color: AppColors.accentGreen.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: const Icon(
@@ -1056,7 +1056,7 @@ class _CTASection extends StatelessWidget {
                       ? 'Wasiliana nasi kwa ushauri wa bure na uone jinsi Mali Akili inavyoweza kusaidia biashara yako'
                       : 'Contact us for a free consultation and see how Mali Akili can transform your business',
                   style: AppTextStyles.bodyLarge(context).copyWith(
-                    color: AppColors.white.withOpacity(0.9),
+                    color: AppColors.white.withValues(alpha: 0.9),
                   ),
                   textAlign: TextAlign.center,
                 ),

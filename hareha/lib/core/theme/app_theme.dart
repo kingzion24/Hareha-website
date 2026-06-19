@@ -142,12 +142,12 @@ class AppTheme {
             letterSpacing: 0.3,
           ),
         ).copyWith(
-          overlayColor: MaterialStateProperty.resolveWith<Color?>(
-            (Set<MaterialState> states) {
-              if (states.contains(MaterialState.hovered)) {
+          overlayColor: WidgetStateProperty.resolveWith<Color?>(
+            (Set<WidgetState> states) {
+              if (states.contains(WidgetState.hovered)) {
                 return AppColors.midBlue;
               }
-              if (states.contains(MaterialState.pressed)) {
+              if (states.contains(WidgetState.pressed)) {
                 return AppColors.midBlue;
               }
               return null;
@@ -174,13 +174,13 @@ class AppTheme {
             letterSpacing: 0.3,
           ),
         ).copyWith(
-          overlayColor: MaterialStateProperty.resolveWith<Color?>(
-            (Set<MaterialState> states) {
-              if (states.contains(MaterialState.hovered)) {
-                return AppColors.white.withOpacity(0.1);
+          overlayColor: WidgetStateProperty.resolveWith<Color?>(
+            (Set<WidgetState> states) {
+              if (states.contains(WidgetState.hovered)) {
+                return AppColors.white.withValues(alpha: 0.1);
               }
-              if (states.contains(MaterialState.pressed)) {
-                return AppColors.white.withOpacity(0.2);
+              if (states.contains(WidgetState.pressed)) {
+                return AppColors.white.withValues(alpha: 0.2);
               }
               return null;
             },
@@ -211,7 +211,7 @@ class AppTheme {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           side: BorderSide(
-            color: AppColors.cyan.withOpacity(0.2),
+            color: AppColors.cyan.withValues(alpha: 0.2),
             width: 1,
           ),
         ),
@@ -225,13 +225,13 @@ class AppTheme {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(
-            color: AppColors.cyan.withOpacity(0.3),
+            color: AppColors.cyan.withValues(alpha: 0.3),
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(
-            color: AppColors.textGray.withOpacity(0.3),
+            color: AppColors.textGray.withValues(alpha: 0.3),
           ),
         ),
         focusedBorder: OutlineInputBorder(
@@ -269,7 +269,7 @@ class AppTheme {
       
       // Divider Theme - Dark Mode
       dividerTheme: DividerThemeData(
-        color: AppColors.textGray.withOpacity(0.2),
+        color: AppColors.textGray.withValues(alpha: 0.2),
         thickness: 1,
         space: 1,
       ),
@@ -328,17 +328,17 @@ class AppTheme {
       
       // Switch Theme
       switchTheme: SwitchThemeData(
-        thumbColor: MaterialStateProperty.resolveWith<Color?>(
-          (Set<MaterialState> states) {
-            if (states.contains(MaterialState.selected)) {
+        thumbColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.selected)) {
               return AppColors.white;
             }
             return AppColors.textGray;
           },
         ),
-        trackColor: MaterialStateProperty.resolveWith<Color?>(
-          (Set<MaterialState> states) {
-            if (states.contains(MaterialState.selected)) {
+        trackColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.selected)) {
               return AppColors.cyan;
             }
             return AppColors.darkBlue;
@@ -348,15 +348,15 @@ class AppTheme {
       
       // Checkbox Theme
       checkboxTheme: CheckboxThemeData(
-        fillColor: MaterialStateProperty.resolveWith<Color?>(
-          (Set<MaterialState> states) {
-            if (states.contains(MaterialState.selected)) {
+        fillColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.selected)) {
               return AppColors.cyan;
             }
             return Colors.transparent;
           },
         ),
-        checkColor: MaterialStateProperty.all(AppColors.white),
+        checkColor: WidgetStateProperty.all(AppColors.white),
         side: const BorderSide(
           color: AppColors.textGray,
           width: 2,
@@ -365,9 +365,9 @@ class AppTheme {
       
       // Radio Theme
       radioTheme: RadioThemeData(
-        fillColor: MaterialStateProperty.resolveWith<Color?>(
-          (Set<MaterialState> states) {
-            if (states.contains(MaterialState.selected)) {
+        fillColor: WidgetStateProperty.resolveWith<Color?>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.selected)) {
               return AppColors.cyan;
             }
             return AppColors.textGray;

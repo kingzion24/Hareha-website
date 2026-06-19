@@ -177,8 +177,8 @@ class _FeatureCardState extends State<_FeatureCard> {
           boxShadow: [
             BoxShadow(
               color: _isHovered
-                  ? AppColors.cyan.withOpacity(0.15)
-                  : Colors.black.withOpacity(0.05),
+                  ? AppColors.cyan.withValues(alpha: 0.15)
+                  : Colors.black.withValues(alpha: 0.05),
               blurRadius: _isHovered ? 20 : 10,
               offset: Offset(0, _isHovered ? 8 : 4),
             ),
@@ -192,7 +192,7 @@ class _FeatureCardState extends State<_FeatureCard> {
               width: 64,
               height: 64,
               decoration: BoxDecoration(
-                color: AppColors.cyan.withOpacity(0.1),
+                color: AppColors.cyan.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(AppSizes.radiusMd),
               ),
               child: Icon(

@@ -76,7 +76,7 @@ class _HeroSection extends StatelessWidget {
                         ? 'Kusaidia biashara za Kitanzania kujibuni kwa njia za kisasa'
                         : 'Helping Tanzanian local businesses reinvent themselves',
                     style: AppTextStyles.bodyLarge(context).copyWith(
-                      color: AppColors.white.withOpacity(0.9),
+                      color: AppColors.white.withValues(alpha: 0.9),
                       height: 1.6,
                     ),
                     textAlign: TextAlign.center,
@@ -199,7 +199,7 @@ class _ProblemSection extends StatelessWidget {
                       ? 'Biashara za Kitanzania zinafanya maamuzi gizani. Biashara ndogondogo zinafuatilia kila kitu kupitia kumbukumbu na madaftari mauzo yanachanganyika pamoja, hesabu ya bidhaa inapotea, gharama zinatawanyika kwenye karatasi.Biashara inahitaji kujibu maswali: Bidhaa zipi zinazalisha faida? Unatumia kiasi gani kwa kweli kila mwezi? Makampuni makubwa na saizi za kati yana tatizo kinyume: miaka ya data inakaa bila kutumika. Mifumo haionekani. Maarifa yamezikwa. Bila wachambuzi, data hiyo haina msaada kwako. Matokeo ni sawa kwa njia zote mbili: maamuzi muhimu yanayofanywa kwa matumaini badala ya ushahidi.'
                       : 'Tanzanian businesses are making decisions in the dark. Informal businesses track everything through memory and notebooks—sales blur together, inventory counts disappear, expenses scatter across random papers. Growth requires answering questions you can\'t: Which products profit? What do you really spend monthly? Established companies have the opposite problem: years of data sitting unused in spreadsheets. Patterns unseen. Insights buried. Without analysts, that data might as well not exist. Same result either way: critical decisions made on hope rather than evidence.',
                   style: AppTextStyles.bodyLarge(context).copyWith(
-                    color: AppColors.white.withOpacity(0.9),
+                    color: AppColors.white.withValues(alpha: 0.9),
                     height: 1.7,
                   ),
                 ),
@@ -258,10 +258,10 @@ class _SolutionSection extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(AppSizes.xl),
                   decoration: BoxDecoration(
-                    color: AppColors.cyan.withOpacity(0.05),
+                    color: AppColors.cyan.withValues(alpha: 0.05),
                     borderRadius: BorderRadius.circular(AppSizes.radiusLg),
                     border: Border.all(
-                      color: AppColors.cyan.withOpacity(0.2),
+                      color: AppColors.cyan.withValues(alpha: 0.2),
                       width: 2,
                     ),
                   ),
@@ -315,10 +315,10 @@ class _SolutionSection extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(AppSizes.xl),
                   decoration: BoxDecoration(
-                    color: AppColors.accentPurple.withOpacity(0.05),
+                    color: AppColors.accentPurple.withValues(alpha: 0.05),
                     borderRadius: BorderRadius.circular(AppSizes.radiusLg),
                     border: Border.all(
-                      color: AppColors.accentPurple.withOpacity(0.2),
+                      color: AppColors.accentPurple.withValues(alpha: 0.2),
                       width: 2,
                     ),
                   ),
@@ -437,10 +437,10 @@ class _MissionVisionSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSizes.xl),
       decoration: BoxDecoration(
-        color: AppColors.white.withOpacity(0.1),
+        color: AppColors.white.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(AppSizes.radiusXl),
         border: Border.all(
-          color: AppColors.white.withOpacity(0.2),
+          color: AppColors.white.withValues(alpha: 0.2),
         ),
       ),
       child: Column(
@@ -471,7 +471,7 @@ class _MissionVisionSection extends StatelessWidget {
                 ? 'Kusaidia biashara za Tanzania kuboresha shughuli zao kupitia teknolojia ya AI na kuwafanya wawe na uwezo wa kushindana katika soko la kimataifa.'
                 : 'To help Tanzanian businesses improve their operations through AI technology and enable them to compete in the international market.',
             style: AppTextStyles.bodyMedium(context).copyWith(
-              color: AppColors.white.withOpacity(0.9),
+              color: AppColors.white.withValues(alpha: 0.9),
               height: 1.7,
             ),
             textAlign: TextAlign.center,
@@ -485,10 +485,10 @@ class _MissionVisionSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSizes.xl),
       decoration: BoxDecoration(
-        color: AppColors.white.withOpacity(0.1),
+        color: AppColors.white.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(AppSizes.radiusXl),
         border: Border.all(
-          color: AppColors.white.withOpacity(0.2),
+          color: AppColors.white.withValues(alpha: 0.2),
         ),
       ),
       child: Column(
@@ -519,7 +519,7 @@ class _MissionVisionSection extends StatelessWidget {
                 ? 'Kuwa kampuni inayoongoza katika kutoa suluhisho za AI kwa biashara za Afrika Mashariki na kuwa kiongozi katika ubunifu wa teknolojia.'
                 : 'To be the leading company in providing AI solutions for East African businesses and be a pioneer in technology innovation.',
             style: AppTextStyles.bodyMedium(context).copyWith(
-              color: AppColors.white.withOpacity(0.9),
+              color: AppColors.white.withValues(alpha: 0.9),
               height: 1.7,
             ),
             textAlign: TextAlign.center,

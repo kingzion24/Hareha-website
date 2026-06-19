@@ -43,7 +43,7 @@ class HarehaWebsite extends StatelessWidget {
         return MediaQuery(
           // Prevent text scaling issues
           data: MediaQuery.of(context).copyWith(
-            textScaleFactor: 1.0,
+            textScaler: TextScaler.linear(1.0),
           ),
           child: child!,
         );

@@ -162,8 +162,8 @@ class _ProblemCardState extends State<_ProblemCard> {
           boxShadow: [
             BoxShadow(
               color: _isHovered
-                  ? AppColors.accentOrange.withOpacity(0.2)
-                  : Colors.black.withOpacity(0.05),
+                  ? AppColors.accentOrange.withValues(alpha: 0.2)
+                  : Colors.black.withValues(alpha: 0.05),
               blurRadius: _isHovered ? 20 : 10,
               offset: Offset(0, _isHovered ? 8 : 4),
             ),
@@ -178,7 +178,7 @@ class _ProblemCardState extends State<_ProblemCard> {
               width: 64,
               height: 64,
               decoration: BoxDecoration(
-                color: AppColors.accentOrange.withOpacity(0.1),
+                color: AppColors.accentOrange.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(AppSizes.radiusMd),
               ),
               child: Icon(

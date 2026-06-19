@@ -218,13 +218,13 @@ class _StepCardState extends State<_StepCard> {
           end: Alignment.bottomRight,
           colors: [
             AppColors.accentOrange,
-            AppColors.accentOrange.withOpacity(0.7),
+            AppColors.accentOrange.withValues(alpha: 0.7),
           ],
         ),
         borderRadius: BorderRadius.circular(AppSizes.radiusFull),
         boxShadow: [
           BoxShadow(
-            color: AppColors.accentOrange.withOpacity(0.3),
+            color: AppColors.accentOrange.withValues(alpha: 0.3),
             blurRadius: 15,
             offset: const Offset(0, 5),
           ),
@@ -260,8 +260,8 @@ class _StepCardState extends State<_StepCard> {
             boxShadow: [
               BoxShadow(
                 color: _isHovered
-                    ? AppColors.cyan.withOpacity(0.3)
-                    : Colors.black.withOpacity(0.1),
+                    ? AppColors.cyan.withValues(alpha: 0.3)
+                    : Colors.black.withValues(alpha: 0.1),
                 blurRadius: _isHovered ? 25 : 15,
                 offset: Offset(0, _isHovered ? 10 : 5),
               ),

@@ -75,7 +75,7 @@ class _HeroSection extends StatelessWidget {
                         ? 'Tuko hapa kukusaidia. Wasiliana nasi kwa maswali, ushauri au msaada wowote.'
                         : 'We\'re here to help. Contact us for any questions, consultations or support.',
                     style: AppTextStyles.bodyLarge(context).copyWith(
-                      color: AppColors.white.withOpacity(0.9),
+                      color: AppColors.white.withValues(alpha: 0.9),
                       height: 1.6,
                     ),
                     textAlign: TextAlign.center,
@@ -236,8 +236,8 @@ class _ContactCardState extends State<_ContactCard> {
               boxShadow: [
                 BoxShadow(
                   color: _isHovered
-                      ? AppColors.cyan.withOpacity(0.15)
-                      : Colors.black.withOpacity(0.05),
+                      ? AppColors.cyan.withValues(alpha: 0.15)
+                      : Colors.black.withValues(alpha: 0.05),
                   blurRadius: _isHovered ? 20 : 10,
                   offset: Offset(0, _isHovered ? 8 : 4),
                 ),
@@ -249,7 +249,7 @@ class _ContactCardState extends State<_ContactCard> {
                   width: 64,
                   height: 64,
                   decoration: BoxDecoration(
-                    color: AppColors.cyan.withOpacity(0.1),
+                    color: AppColors.cyan.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(AppSizes.radiusMd),
                   ),
                   child: Icon(
@@ -418,7 +418,7 @@ class _FAQSection extends StatelessWidget {
                       const SizedBox(height: AppSizes.md),
                   ],
                 );
-              }).toList(),
+              }),
             ],
           ),
         ),
@@ -468,7 +468,7 @@ class _FAQItemState extends State<_FAQItem> {
         boxShadow: _isExpanded
             ? [
                 BoxShadow(
-                  color: AppColors.cyan.withOpacity(0.1),
+                  color: AppColors.cyan.withValues(alpha: 0.1),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),

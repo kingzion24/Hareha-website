@@ -401,15 +401,15 @@ class _SelfDiagnosisCardState extends State<_SelfDiagnosisCard> {
           borderRadius: BorderRadius.circular(AppSizes.radiusXl),
           border: Border.all(
             color: _isHovered 
-                ? widget.iconColor.withOpacity(0.5) 
-                : widget.iconColor.withOpacity(0.2),
+                ? widget.iconColor.withValues(alpha: 0.5) 
+                : widget.iconColor.withValues(alpha: 0.2),
             width: 2,
           ),
           boxShadow: [
             BoxShadow(
               color: _isHovered
-                  ? widget.iconColor.withOpacity(0.15)
-                  : Colors.black.withOpacity(0.05),
+                  ? widget.iconColor.withValues(alpha: 0.15)
+                  : Colors.black.withValues(alpha: 0.05),
               blurRadius: _isHovered ? 40 : 20,
               offset: Offset(0, _isHovered ? 20 : 10),
               spreadRadius: _isHovered ? 2 : 0,
@@ -470,7 +470,7 @@ class _SelfDiagnosisCardState extends State<_SelfDiagnosisCard> {
                             TextSpan(
                               text: ' ${point.description}',
                               style: AppTextStyles.bodyMedium(context).copyWith(
-                                color: AppColors.darkNavy.withOpacity(0.85),
+                                color: AppColors.darkNavy.withValues(alpha: 0.85),
                                 fontWeight: FontWeight.w400,
                                 fontSize: 15,
                                 height: 1.7,
@@ -482,7 +482,7 @@ class _SelfDiagnosisCardState extends State<_SelfDiagnosisCard> {
                     ),
                   ],
                 ),
-              )).toList(),
+              )),
               
               const SizedBox(height: AppSizes.xl),
               
@@ -494,10 +494,10 @@ class _SelfDiagnosisCardState extends State<_SelfDiagnosisCard> {
                   vertical: AppSizes.md,
                 ),
                 decoration: BoxDecoration(
-                  color: widget.iconColor.withOpacity(0.1),
+                  color: widget.iconColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSizes.radiusMd),
                   border: Border.all(
-                    color: widget.iconColor.withOpacity(0.3),
+                    color: widget.iconColor.withValues(alpha: 0.3),
                     width: 1.5,
                   ),
                 ),
@@ -531,7 +531,7 @@ class _SelfDiagnosisCardState extends State<_SelfDiagnosisCard> {
               Text(
                 widget.solution,
                 style: AppTextStyles.bodyMedium(context).copyWith(
-                  color: AppColors.darkNavy.withOpacity(0.75),
+                  color: AppColors.darkNavy.withValues(alpha: 0.75),
                   height: 1.7,
                   fontSize: 15,
                 ),
@@ -552,7 +552,7 @@ class _SelfDiagnosisCardState extends State<_SelfDiagnosisCard> {
                     boxShadow: _isCtaHovered
                         ? [
                             BoxShadow(
-                              color: widget.ctaColor.withOpacity(0.4),
+                              color: widget.ctaColor.withValues(alpha: 0.4),
                               blurRadius: 20,
                               offset: const Offset(0, 8),
                             ),

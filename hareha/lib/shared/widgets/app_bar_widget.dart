@@ -24,7 +24,7 @@ class AppBarWidget extends ConsumerWidget implements PreferredSizeWidget {
         color: AppColors.darkNavy,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -306,7 +306,7 @@ class _LanguageSwitcher extends ConsumerWidget {
     return Container(
       padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
-        color: AppColors.white.withOpacity(0.1),
+        color: AppColors.white.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(AppSizes.radiusFull),
       ),
       child: Row(

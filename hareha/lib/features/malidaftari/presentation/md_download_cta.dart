@@ -30,7 +30,7 @@ class MDDownloadCTA extends ConsumerWidget {
           end: Alignment.bottomCenter,
           colors: [
             AppColors.white,
-            AppColors.accentOrange.withOpacity(0.05),
+            AppColors.accentOrange.withValues(alpha: 0.05),
           ],
         ),
       ),
@@ -187,7 +187,7 @@ class MDDownloadCTA extends ConsumerWidget {
         color: AppColors.lightGray,
         borderRadius: BorderRadius.circular(AppSizes.radiusFull),
         border: Border.all(
-          color: AppColors.textGray.withOpacity(0.3),
+          color: AppColors.textGray.withValues(alpha: 0.3),
           width: 2,
         ),
       ),
@@ -240,7 +240,7 @@ class MDDownloadCTA extends ConsumerWidget {
           borderRadius: BorderRadius.circular(AppSizes.radiusFull),
         ),
         elevation: 5,
-        shadowColor: AppColors.accentOrange.withOpacity(0.5),
+        shadowColor: AppColors.accentOrange.withValues(alpha: 0.5),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -328,8 +328,8 @@ class _ScreenshotCardState extends State<_ScreenshotCard> {
             boxShadow: [
               BoxShadow(
                 color: _isHovered
-                    ? AppColors.accentOrange.withOpacity(0.3)
-                    : Colors.black.withOpacity(0.1),
+                    ? AppColors.accentOrange.withValues(alpha: 0.3)
+                    : Colors.black.withValues(alpha: 0.1),
                 blurRadius: _isHovered ? 20 : 10,
                 offset: Offset(0, _isHovered ? 10 : 5),
               ),
