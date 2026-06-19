@@ -33,7 +33,7 @@ jobs:
 
       - name: Install dependencies
         # Tells the runner to go into your specific folder first
-        working-directory: ./hareha-website/hareha
+        working-directory: ./Hareha-website/hareha
         run: flutter pub get
 
       - name: Build Web Application
