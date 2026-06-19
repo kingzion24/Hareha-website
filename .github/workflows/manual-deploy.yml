@@ -1,51 +1,47 @@
 name: Manual Flutter Web Deployment
 
-# 1. The Trigger
-on:
-  workflow_dispatch: 
+  on:
+    workflow_dispatch:
 
-# 2. Required Permissions
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+  permissions:
+    contents: read
+    pages: write
+    id-token: write
 
-# 3. Concurrency
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  concurrency:
+    group: "pages"
+    cancel-in-progress: true
 
-jobs:
-  build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  jobs:
+    build-and-deploy:
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      runs-on: ubuntu-latest
 
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: 'stable'
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
 
-      - name: Install dependencies
-        # Notice the capital H in Hareha-website
-        working-directory: ./Hareha-website/hareha
-        run: flutter pub get
+        - name: Set up Flutter
+          uses: subosito/flutter-action@v2
+          with:
+            channel: 'stable'
+            cache: true            # cache the SDK between runs
 
-      - name: Build Web Application
-        working-directory: ./Hareha-website/hareha
-        run: flutter build web --release
+        - name: Install dependencies
+          working-directory: ./hareha
+          run: flutter pub get
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Points the uploader to the exact build folder
-          path: './Hareha-website/hareha/build/web'
+        - name: Build Web Application
+          working-directory: ./hareha
+          run: flutter build web --release --base-href "/Hareha-website/"
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        - name: Upload artifact
+          uses: actions/upload-pages-artifact@v3
+          with:
+            path: './hareha/build/web'
+
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v4
