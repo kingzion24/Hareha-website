@@ -2,7 +2,7 @@ name: Manual Flutter Web Deployment
 
 # 1. The Trigger
 on:
-  workflow_dispatch: # This enables the "Run workflow" button in the GitHub UI
+  workflow_dispatch: 
 
 # 2. Required Permissions
 permissions:
@@ -10,7 +10,7 @@ permissions:
   pages: write
   id-token: write
 
-# 3. Concurrency (Prevents multiple builds from colliding)
+# 3. Concurrency
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -32,17 +32,20 @@ jobs:
           channel: 'stable'
 
       - name: Install dependencies
+        # Tells the runner to go into your specific folder first
+        working-directory: ./hareha-website/hareha
         run: flutter pub get
 
       - name: Build Web Application
-        # Because you are using a custom domain, your base-href is correctly left as the default "/"
+        # Tells the runner to build from inside that folder
+        working-directory: ./hareha-website/hareha
         run: flutter build web --release
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This tells GitHub to grab the exact folder Flutter just built
-          path: 'build/web'
+          # Points to the exact nested location of the new build
+          path: './hareha-website/hareha/build/web'
 
       - name: Deploy to GitHub Pages
         id: deployment
